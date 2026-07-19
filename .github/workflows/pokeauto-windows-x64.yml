@@ -1,0 +1,65 @@
+name: PokeAuto Windows x64
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [develop, main, master]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout source and submodules
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Restore source dependencies when uploaded from a ZIP
+        shell: pwsh
+        run: |
+          if (-not (Test-Path RAInterface\RA_Interface.cpp)) {
+            Remove-Item RAInterface -Recurse -Force -ErrorAction SilentlyContinue
+            git clone --depth 1 https://github.com/RetroAchievements/RAInterface.git RAInterface
+          }
+          if (-not (Test-Path dependencies\mingw-xaudio\include)) {
+            Remove-Item dependencies -Recurse -Force -ErrorAction SilentlyContinue
+            git clone --depth 1 --recursive https://github.com/visualboyadvance-m/dependencies.git dependencies
+          }
+
+      - name: Prepare Visual Studio
+        uses: ilammy/msvc-dev-cmd@v1.13.0
+        with:
+          arch: x64
+
+      - name: Configure RAVBA with RetroAchievements
+        run: >-
+          cmake -B build -G Ninja
+          -DCMAKE_BUILD_TYPE=Release
+          -DVCPKG_TARGET_TRIPLET=x64-windows-static
+          -DENABLE_SDL=TRUE
+          -DENABLE_RETROACHIEVEMENTS=TRUE
+          -DENABLE_FFMPEG=FALSE
+          -DENABLE_ONLINEUPDATES=FALSE
+
+      - name: Build
+        run: cmake --build build --config Release
+
+      - name: Assemble package
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force package | Out-Null
+          $exe = Get-ChildItem build -Recurse -Filter RAVisualBoyAdvance-M.exe | Select-Object -First 1
+          if (-not $exe) { throw "RAVisualBoyAdvance-M.exe was not generated" }
+          Copy-Item $exe.FullName package\
+          Get-ChildItem build -Recurse -File | Where-Object {
+            $_.Name -in @('RA_Integration.dll','RA_Integration-x64.dll','translations.zip')
+          } | ForEach-Object { Copy-Item $_.FullName package\ -Force }
+          Copy-Item extras\pokeauto\README-PTBR.md package\
+          Copy-Item extras\pokeauto\firered_starter_sequence_10x.json package\
+
+      - name: Upload package
+        uses: actions/upload-artifact@v4
+        with:
+          name: RAVBA-PokeAuto-x64
+          path: package

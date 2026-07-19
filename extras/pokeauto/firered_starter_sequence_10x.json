@@ -1,0 +1,202 @@
+{
+  "format": 1,
+  "description": "Sequ\u00eancia gravada pelo PokeAuto",
+  "events": [
+    {
+      "at_ms": 212,
+      "command": "RESET"
+    },
+    {
+      "at_ms": 546,
+      "command": "PRESS A"
+    },
+    {
+      "at_ms": 678,
+      "command": "RELEASE A"
+    },
+    {
+      "at_ms": 754,
+      "command": "PRESS A"
+    },
+    {
+      "at_ms": 860,
+      "command": "RELEASE A"
+    },
+    {
+      "at_ms": 918,
+      "command": "PRESS A"
+    },
+    {
+      "at_ms": 1018,
+      "command": "RELEASE A"
+    },
+    {
+      "at_ms": 1137,
+      "command": "PRESS A"
+    },
+    {
+      "at_ms": 1299,
+      "command": "RELEASE A"
+    },
+    {
+      "at_ms": 1373,
+      "command": "PRESS A"
+    },
+    {
+      "at_ms": 1465,
+      "command": "RELEASE A"
+    },
+    {
+      "at_ms": 1533,
+      "command": "PRESS A"
+    },
+    {
+      "at_ms": 1646,
+      "command": "RELEASE A"
+    },
+    {
+      "at_ms": 1698,
+      "command": "PRESS A"
+    },
+    {
+      "at_ms": 1867,
+      "command": "RELEASE A"
+    },
+    {
+      "at_ms": 1923,
+      "command": "PRESS A"
+    },
+    {
+      "at_ms": 2025,
+      "command": "RELEASE A"
+    },
+    {
+      "at_ms": 2104,
+      "command": "PRESS A"
+    },
+    {
+      "at_ms": 2145,
+      "command": "RELEASE A"
+    },
+    {
+      "at_ms": 2234,
+      "command": "PRESS A"
+    },
+    {
+      "at_ms": 2309,
+      "command": "RELEASE A"
+    },
+    {
+      "at_ms": 2384,
+      "command": "PRESS A"
+    },
+    {
+      "at_ms": 2459,
+      "command": "RELEASE A"
+    },
+    {
+      "at_ms": 2536,
+      "command": "PRESS A"
+    },
+    {
+      "at_ms": 2609,
+      "command": "RELEASE A"
+    },
+    {
+      "at_ms": 2693,
+      "command": "PRESS A"
+    },
+    {
+      "at_ms": 2774,
+      "command": "RELEASE A"
+    },
+    {
+      "at_ms": 2855,
+      "command": "PRESS A"
+    },
+    {
+      "at_ms": 2939,
+      "command": "RELEASE A"
+    },
+    {
+      "at_ms": 3118,
+      "command": "PRESS B"
+    },
+    {
+      "at_ms": 3234,
+      "command": "RELEASE B"
+    },
+    {
+      "at_ms": 3309,
+      "command": "PRESS B"
+    },
+    {
+      "at_ms": 3394,
+      "command": "RELEASE B"
+    },
+    {
+      "at_ms": 3475,
+      "command": "PRESS B"
+    },
+    {
+      "at_ms": 3555,
+      "command": "RELEASE B"
+    },
+    {
+      "at_ms": 3633,
+      "command": "PRESS B"
+    },
+    {
+      "at_ms": 3729,
+      "command": "RELEASE B"
+    },
+    {
+      "at_ms": 3805,
+      "command": "PRESS B"
+    },
+    {
+      "at_ms": 3894,
+      "command": "RELEASE B"
+    },
+    {
+      "at_ms": 3969,
+      "command": "PRESS B"
+    },
+    {
+      "at_ms": 4055,
+      "command": "RELEASE B"
+    },
+    {
+      "at_ms": 4123,
+      "command": "PRESS B"
+    },
+    {
+      "at_ms": 4224,
+      "command": "RELEASE B"
+    },
+    {
+      "at_ms": 4323,
+      "command": "PRESS B"
+    },
+    {
+      "at_ms": 4439,
+      "command": "RELEASE B"
+    },
+    {
+      "at_ms": 4508,
+      "command": "PRESS B"
+    },
+    {
+      "at_ms": 4626,
+      "command": "RELEASE B"
+    },
+    {
+      "at_ms": 4700,
+      "command": "PRESS B"
+    },
+    {
+      "at_ms": 4796,
+      "command": "RELEASE B"
+    }
+  ]
+}

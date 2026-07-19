@@ -1,0 +1,20 @@
+==== Setup repository ====
+
+$ git clone https://github.com/RetroAchievements/RAVBA.git
+$ cd RAVBA
+$ git submodule init
+$ git submodule update --recursive
+
+==== Updating ====
+* Make sure to tag the source branch with the lastest vendor tag so the reference version is correct.
+  $ git checkout source
+  $ git tag -a "v2.1.11" -m "v2.1.11"
+  $ git checkout master
+  $ git checkout -b vendor_2.1.11
+  $ git merge source
+
+==== Open in Visual Studio ====
+* Open a new instance of Visual Studio and select File > Open > CMake. Navigate to the root CMakeLists.txt.
+* Select the "x64-static-Debug-RetroAchievements" or "x64-static-Release-RetroAchievements" project.
+* After cmake finishes processing, you can build using whatever shortcut you have (Ctrl+Shift+B by default).
+* Change the "run" project to "RAVisualBoyAdvance-M.exe" and you can start it/debug it as you would anything else.
